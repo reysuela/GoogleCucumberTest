@@ -16,7 +16,7 @@ pipeline {
     stage('build') {
       steps {
           container('maven') {
-            sh "./gradlew test --rerun-tasks --info"
+            sh "chmod a+x gradlew && ./gradlew test --rerun-tasks --info"
             sh "ls -al"
             sh "ls build"
           }
